@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Jaan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="https://c4.wallpaperflare.com/wallpaper/382/803/747/couple-love-sunset-lake-wallpaper-preview.jpg" alt="">
+    <!-- Front Page -->
+    <div class="front-page" id="frontPage">
+        <h1>This is for MY JaAnY JaHa 😘💋💕</h1>
+        <button class="start-button" onclick="startApp()">Start</button>
+    </div>
+
+    <!-- Main Content (hidden initially) -->
+    <div class="container" id="mainContent" style="display: none;">
+        <h1 id="question">Do you love me? 💖</h1>
+        <div class="options">
+            <button id="yes" onclick="love()">Yes</button>
+            <button id="no" onclick="nextQuestion()">No</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the main content and hide the front page
+        function startApp() {
+            document.getElementById('frontPage').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'flex';
+        }
+
+        let questionIndex = 0;
+        const questions = [
+            "Aik bar phr soch lo 😢",
+            "I know you love me 💖"
+        ];
+
+        function nextQuestion() {
+            if (questionIndex < questions.length) {
+                document.getElementById("question").innerText = questions[questionIndex];
+                questionIndex++;
+            } else {
+                alert("You can't deny it anymore! My heart knows the truth 💕");
+            }
+        }
+
+        function love() {
+            document.body.innerHTML = `
+                <div class="final">
+                    <h1>Yay! I knew it! 💘</h1>
+                    <p>You said Yes! I love you too! 💖</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
